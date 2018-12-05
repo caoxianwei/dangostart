@@ -9,3 +9,13 @@ def getfrom(request):
     for magssage in all_messages:
         print(magssage.name)
     return render(request, 'message_form.html')
+
+def addfrom(request):
+    user_message = UserMessage()
+    user_message.name = 'bbb'
+    user_message.message = '新加test'
+    user_message.address = '杭州'
+    user_message.email = 'bbb@tt.com'
+    user_message.object_id = 'bbb1'
+    user_message.save()
+    return render(request, 'message_form.html')
