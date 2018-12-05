@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from message.views import getfrom, addfrom
+from message.views import getfrom, addfrom, deletefrom
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('form/', getfrom),
     path('form/add/', addfrom),
+    path('form/delete/', deletefrom),
 ]
