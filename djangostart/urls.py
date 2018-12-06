@@ -19,7 +19,7 @@ from message.views import getfrom, addfrom, deletefrom, getDetail
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('form/', getfrom),
+    path('form/', getfrom, name='go_form'),
     path('form/add/', addfrom),
     path('form/delete/', deletefrom),
     path('form/detail/<detail_id>/', getDetail),
