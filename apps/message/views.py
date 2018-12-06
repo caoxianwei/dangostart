@@ -41,3 +41,13 @@ def deletefrom(request):
         print(massage.name)
         massage.delete()
     return render(request, 'message_form.html')
+
+def getDetail(request, detail_id):
+    print(detail_id)
+    message = None
+    all_messages = UserMessage.objects.filter(name=detail_id)
+    if all_messages:
+        message = all_messages[0]
+    return render(request, 'message_form.html', {
+        'message': message
+    })
